@@ -376,13 +376,13 @@ while(True):
                 motor.DCMotorMove(3,2,190)
                 motor.DCMotorMove(4,1,190)
                 # Left
-            elif (data=='L'):
+            elif (data=='K'):
                 motor.DCMotorMove(1,2,190)
                 motor.DCMotorMove(2,1,190)
                 motor.DCMotorMove(3,1,190)
                 motor.DCMotorMove(4,2,190)
                 # Rotate Left
-            elif (data=='K'):
+            elif (data=='L'):
                 motor.DCMotorMove(1,1,190)
                 motor.DCMotorMove(2,2,190)
                 motor.DCMotorMove(3,2,190)
