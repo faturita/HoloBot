@@ -25,7 +25,6 @@ import socket
 import Proprioceptive as prop
 import thread
 #import PicameraStreamer as pcs
-import H264Streamer as pcs
 import SensorimotorLogger as senso
 import MCast
 
@@ -145,6 +144,10 @@ def doserial():
     return [ssmr, mtrn]
 
 #[ssmr, mtrn] = doserial()
+
+ssmr = None
+mtrn = None
+
 
 def stopMotors():
     motor.DCMotorStop(1)
@@ -364,8 +367,8 @@ while(True):
             elif (data=='D'):
                 motor.DCMotorMove(1,1,190)
                 motor.DCMotorMove(2,2,190)
-                motor.DCMotorMove(3,2,190)
-                motor.DCMotorMove(4,1,190)
+                motor.DCMotorMove(3,1,190)
+                motor.DCMotorMove(4,2,190)
                 # Right
             elif (data=='A'):
                 motor.DCMotorMove(1,2,190)
