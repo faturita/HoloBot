@@ -189,6 +189,8 @@ visualpos = [90,95]
 
 scan = 90
 
+pwmduty = 190
+
 # Enables the sensor telemetry.  Arduinos will send telemetry data that will be
 #  sent to listening servers.
 sensesensor = False
@@ -353,46 +355,46 @@ while(True):
                 stopMotors()
                 # Quiet
             elif (data=='W'):
-                motor.DCMotorMove(1,1,190)
-                motor.DCMotorMove(2,1,190)
-                motor.DCMotorMove(3,1,190)
-                motor.DCMotorMove(4,1,190)
+                motor.DCMotorMove(1,1,pwmduty)
+                motor.DCMotorMove(2,1,pwmduty)
+                motor.DCMotorMove(3,1,pwmduty)
+                motor.DCMotorMove(4,1,pwmduty)
                 # Forward
             elif (data=='S'):
-                motor.DCMotorMove(1,2,190)
-                motor.DCMotorMove(2,2,190)
-                motor.DCMotorMove(3,2,190)
-                motor.DCMotorMove(4,2,190)
+                motor.DCMotorMove(1,2,pwmduty)
+                motor.DCMotorMove(2,2,pwmduty)
+                motor.DCMotorMove(3,2,pwmduty)
+                motor.DCMotorMove(4,2,pwmduty)
                 # Backward
             elif (data=='D'):
-                motor.DCMotorMove(1,1,190)
-                motor.DCMotorMove(2,2,190)
-                motor.DCMotorMove(3,1,190)
-                motor.DCMotorMove(4,2,190)
+                motor.DCMotorMove(1,1,pwmduty)
+                motor.DCMotorMove(2,2,pwmduty)
+                motor.DCMotorMove(3,1,pwmduty)
+                motor.DCMotorMove(4,2,pwmduty)
                 # Right
             elif (data=='A'):
-                motor.DCMotorMove(1,2,190)
-                motor.DCMotorMove(2,1,190)
-                motor.DCMotorMove(3,2,190)
-                motor.DCMotorMove(4,1,190)
+                motor.DCMotorMove(1,2,pwmduty)
+                motor.DCMotorMove(2,1,pwmduty)
+                motor.DCMotorMove(3,2,pwmduty)
+                motor.DCMotorMove(4,1,pwmduty)
                 # Left
             elif (data=='K'):
-                motor.DCMotorMove(1,2,190)
-                motor.DCMotorMove(2,1,190)
-                motor.DCMotorMove(3,1,190)
-                motor.DCMotorMove(4,2,190)
+                motor.DCMotorMove(1,2,pwmduty)
+                motor.DCMotorMove(2,1,pwmduty)
+                motor.DCMotorMove(3,1,pwmduty)
+                motor.DCMotorMove(4,2,pwmduty)
                 # Rotate Left
             elif (data=='L'):
-                motor.DCMotorMove(1,1,190)
-                motor.DCMotorMove(2,2,190)
-                motor.DCMotorMove(3,2,190)
-                motor.DCMotorMove(4,1,190)
+                motor.DCMotorMove(1,1,pwmduty)
+                motor.DCMotorMove(2,2,pwmduty)
+                motor.DCMotorMove(3,2,pwmduty)
+                motor.DCMotorMove(4,1,pwmduty)
                 # Rotate Right
             elif (data=='.'):
-                ssmr.write('-')
+                pwmduty = pwmduty - 10
                 # Move slowly
             elif (data==','):
-                ssmr.write('+')
+                pwmduty = pwmduty + 10
                 # Move coarsely
 
 
